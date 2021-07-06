@@ -8,5 +8,6 @@ export default {
     format: "esm",
     sourcemap: true,
   },
+  external: ["react", "styled-components"],
   plugins: [babel({ babelHelpers: "bundled" }), terser()],
 };
