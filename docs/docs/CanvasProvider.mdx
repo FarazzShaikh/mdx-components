@@ -1,0 +1,64 @@
+---
+title: Canvas Provider
+---
+
+import { Canvas2D } from "../../build/mdx-components.js";
+
+# Canvas Provider
+
+The **Canvas Provider** implements Auxilary functionality for the [Canvas](../components/canvas) component. It implements the following:
+
+- Initializes a Canvas element and calls its `script` prop with the canvas' ref.
+- Attaches an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and monitors the position of the Canvas on the body.
+- Initializes an animation loop if given one.
+- If the canvas is outside the viewport and an animation loop is in progress, it halts the loop until the canvas is back in the viewport.
+
+<Canvas2D />
+
+## Example
+
+Drawing a Circle on a canavs
+
+```jsx
+function script(canvas) {
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    function animate() {
+        // Animation Loop
+    }
+
+    return animate;
+}
+
+function Canvas() {
+    return (
+        <CanvasProvider 
+            script={script} 
+            style={{
+                width: "100%",
+                height: "100%",
+            }}
+        />
+    )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Required |
+|------|------|---------|----------|
+| `script` | `(canvas: HTMLCanvasElement) => (() => void)` | `none` | `true` |
+| `styles` | `React.CSSProperties` | `none` | `false` |
+
+### `script`
+
+This prop is a function that receives a ref to the canvas element as its parameter. We can use this function to draw whatever we like on the canvas.
+
+This function returns its animation loop. This is another function that is passed into `requestAnimationFrame` to drive canvas-based animations.
+
+### `style`
+
+This is a `React.CSSProperties` object that overwrites the style of the underlying canvas. Use this to set CSS properties like `background-color` and `border-radius`

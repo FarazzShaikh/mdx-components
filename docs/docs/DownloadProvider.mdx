@@ -1,0 +1,42 @@
+---
+title: Download Provider
+---
+
+import { Download } from "../../build/mdx-components.js";
+import zipIcon from "/img/zip.svg";
+
+# Download Provider
+
+The **Download Provider** provides a click-listener that downloads a file from a specified URL.
+
+<Download 
+    url="/sample.zip" 
+    Icon={zipIcon} 
+    text="Your Custom Message" 
+/>
+
+## Example
+
+A Download Button which when clicked, invokes the `DownloadProvider` that downloads the file at `url`.
+
+```jsx
+
+export const Download = ({ url }) => {
+  return (
+    <DownloadProvider path={url}>
+        <div className="Download Button" />
+    </DownloadProvider>
+  );
+};
+
+```
+
+## Props
+
+| Prop | Type | Default | Required |
+|------|------|---------|----------|
+| `path` | `string` | `none` | `true` |
+
+### `path`
+
+Path to the file to download.

@@ -1,0 +1,116 @@
+---
+title: Examples
+sidebar_position: 0
+---
+
+import {
+    CaptionProvider,
+    Spoiler,
+    Canvas2D,
+    Download,
+    Highlight,
+    Embed,
+    Image,
+    RepoCard,
+} from "../../build/mdx-components.js"
+import zipIcon from "/img/zip.svg";
+
+# Examples
+
+Various examples of components created using given Providers
+
+## Responsive Highlighting
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    <Highlight>The text in this line will be Black in Light Mode and White in Dark Mode!</Highlight>
+</CaptionProvider>
+
+
+## Canvas
+
+### 2D
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    <Canvas2D />
+</CaptionProvider>
+
+
+## Download Button
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    
+    <Download 
+        url="/sample.zip" 
+        Icon={zipIcon} 
+        text="Your Custom Message" 
+    />
+</CaptionProvider>
+
+## Spoilers
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+<Spoiler
+    title={`👋
+    This is a title.
+    `}
+    message="This is a little message."
+    hint="This is a useful hint."
+>
+
+```js
+const a = 124
+
+function HelloWorld(message) {
+    console.log(message)
+}
+
+HelloWorld(message)
+```
+
+</Spoiler>
+</CaptionProvider>
+
+## Images
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    <Image 
+        src="https://cdnb.artstation.com/p/assets/images/images/023/618/593/large/faraz-shaikh-sign-1-1-1.jpg?1579790914" 
+    />
+</CaptionProvider>
+
+## Interactive Embeds
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    <Embed url="https://www.desmos.com/calculator/tbs3vwijfo?embed"/>
+</CaptionProvider>
+
+## Repositories
+
+<CaptionProvider
+    source="Source Code" 
+    sourceUrl="[TODO]" 
+>
+    <RepoCard
+        owner="mrdoob"
+        repo="three.js"
+        type={"pin"}
+    />
+</CaptionProvider>

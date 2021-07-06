@@ -1,0 +1,56 @@
+---
+title: Caption Provider
+---
+
+import { Image } from "../../build/mdx-components.js";
+import {CaptionProvider} from "../../build/mdx-components.js";
+
+# Caption Provider
+
+The **Caption Provider** displays captions around a child component. This can be used to caption Images or Embeds.
+
+<CaptionProvider
+    caption="A 3D render done in Unreal Engine 4." 
+    source="Faraz Shaikh - UE4 (2020)" 
+    sourceUrl="https://www.artstation.com/artwork/3oNzOE" 
+>
+    <Image 
+        src="https://cdnb.artstation.com/p/assets/images/images/023/618/593/large/faraz-shaikh-sign-1-1-1.jpg?1579790914" 
+    />
+</CaptionProvider>
+
+## Example
+
+An Image with captions
+
+```jsx
+<CaptionProvider
+    caption="A 3D render done in Unreal Engine 4." 
+    source="Faraz Shaikh - UE4 (2020)" 
+    sourceUrl="https://www.artstation.com/artwork/3oNzOE" 
+>
+    <Image 
+        src="https://cdnb.artstation.com/p/assets/images/images/023/618/593/large/faraz-shaikh-sign-1-1-1.jpg?1579790914" 
+    />
+</CaptionProvider>
+```
+
+## Props
+
+| Prop | Type | Default | Required |
+|------|------|---------|----------|
+| `caption` | `string` | `none` | `false` |
+| `source` | `string` | `"Source"` | `false` |
+| `sourceUrl` | `string` | `none` | `false` |
+
+### `caption`
+
+The caption to the image.
+
+### `source`
+
+The text for the link to the source.
+
+### `sourceUrl`
+
+The URL of the source. If not present, the source line will not be shown.

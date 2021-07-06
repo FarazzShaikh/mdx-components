@@ -1,0 +1,100 @@
+---
+title: Spoiler Provider
+---
+
+import { Spoiler } from "../../build/mdx-components.js";
+
+# Spoiler Provider
+
+The **Spoiler Provider** provides an overlay that blurs its children. When clicked, the overlay is lifted and the children are revealed. `Shift + Click` will restore the overlay.
+
+:::warning
+This uses [CSS Backdrop Filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter). See Browser support and use accordingly.
+
+You can provide fallback styles if the browser does not support Backdrop Filter.
+:::
+
+<Spoiler
+    title={`👋
+    This is a title.
+    `}
+    message="This is a little message."
+    hint="This is a useful hint."
+>
+
+```js
+const a = 124
+
+function HelloWorld(message) {
+    console.log(message)
+}
+
+HelloWorld(message)
+```
+
+</Spoiler>
+
+
+## Example
+
+A code block as a spoiler.
+
+:::warning
+SpoilerProvider in itself is not responsive to the theme. If you want the text color to be responsive then use Spoiler.
+:::
+
+```jsx
+<SpoilerProvider
+    title={`👋
+    This is a title.
+    `}
+    message="This is a little message."
+    hint="This is a useful hint."
+>
+
+``js
+const a = 124
+
+function HelloWorld(message) {
+    console.log(message)
+}
+
+HelloWorld(message)
+``
+
+</SpoilerProvider>
+
+```
+
+
+## Props
+
+| Prop | Type | Default | Required |
+|------|------|---------|----------|
+| `title` | `string` | `none` | `false` |
+| `message` | `string` | `none` | `false` |
+| `hint` | `string` | `none` | `false` |
+| `style` | `React.CSSProperties` | `none` | `false` |
+| `textStyle` | `React.CSSProperties` | `none` | `false` |
+
+### `title`
+
+Title of the spoiler.
+
+### `message`
+
+Message of the spoiler.
+
+### `hint`
+
+A little hint message.
+
+### `style`
+
+Overwrite styles of the blur overlay.
+
+### `textStyle`
+
+Overwrite styles of the text container
+
+
