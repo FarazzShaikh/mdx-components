@@ -12,7 +12,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn add
+          yarn install
           yarn build
           cd docs && yarn install && yarn build && cd ..
 
