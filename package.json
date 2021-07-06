@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Collection of MDX Components.",
   "main": "build/mdx-components.js",
+  "repository": "https://github.com/FarazzShaikh/mdx-components",
   "keywords": [
     "mdx",
     "components",
