@@ -1,6 +1,6 @@
 {
   "name": "mdx-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Collection of MDX Components.",
   "main": "build/mdx-components.js",
   "repository": "https://github.com/FarazzShaikh/mdx-components",
